@@ -1,0 +1,2 @@
+#define WINDOWHTMLVIEW_API __declspec(dllexport)
+#define WINDOWHTMLVIEW_API __declspec(dllimport)
