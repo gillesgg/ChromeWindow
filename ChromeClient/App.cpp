@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "App.h"
 #include "theme.h"
+#include "osutility.h"
 #include "FormViewHwndHost.h"
 
 namespace ChromeClient
@@ -13,9 +14,6 @@ namespace ChromeClient
 	using namespace System::Windows::Input;
 	using namespace System::Windows::Media;
 	using namespace Microsoft::Win32;
-
-
-
 
 	App::App()
 	{
@@ -67,136 +65,13 @@ namespace ChromeClient
 	}
 
 
-	HRESULT App::LoadResourcestofile()
-	{
-
-		std::wstring themefile = L"WindowsTheme.xaml";
-		std::wstring themefolder = L"Themes";
-		std::wstring xamlfolder = L"XAML";
-		std::wstring MainWindowfile = L"MainWindow.xaml";
-
-		HRESULT hr;
-
-		if (FAILED(hr = LoadResourcetofile(themefolder, themefile, IDR_THEME_APP, L"THEME")))
-		{
-			return hr;
-		}
-
-		hr = LoadResourcetofile(xamlfolder, MainWindowfile, IDR_XAML_MAINWINDOW, L"XAML");
-		
-		return hr;
-		
-
-	}
-
-	HRESULT App::LoadResourcetofile(std::wstring folder, std::wstring filename, int id, std::wstring name)
-	{
-		HRSRC findResourceHandle;
-		HGLOBAL resourceHandle;
-
-
-		findResourceHandle = FindResource(GetModuleHandle(nullptr), MAKEINTRESOURCE(id), name.c_str());
-
-		if (findResourceHandle == nullptr)
-		{
-			return HRESULT_FROM_WIN32(GetLastError());
-		}
-		unsigned int resourceSize = SizeofResource(NULL, findResourceHandle);			
-		resourceHandle = LoadResource(NULL, findResourceHandle);
-		if (resourceHandle == NULL)
-		{
-			return HRESULT_FROM_WIN32(GetLastError());
-		}
-
-		unsigned char* registerResource = (unsigned char*)LockResource(resourceHandle);
-		unsigned long actuallyWritten;
-
-		std::wstring destfile = GetFolder(folder, filename);
-
-		HANDLE fileHandle = CreateFile(destfile.c_str(), GENERIC_WRITE, FILE_SHARE_READ | FILE_SHARE_WRITE, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
-
-		if (fileHandle == INVALID_HANDLE_VALUE)
-		{
-			return HRESULT_FROM_WIN32(GetLastError());
-		}
-			
-		WriteFile(fileHandle, registerResource, resourceSize, &actuallyWritten, NULL);
-		CloseHandle(fileHandle);
-		return S_OK;
-	}
-
-	std::wstring App::GetExecutableName(std::wstring path)
-	{
-		return fs::path(path).stem().wstring();
-	}
-
-	std::wstring App::GetExecutableName()
-	{
-		wchar_t			processname[MAX_PATH];
-		DWORD			dwSize = MAX_PATH;
-		std::wstring	sprocessname;
-
-
-			auto hProcess = OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION, false, GetCurrentProcessId());
-			if (hProcess != nullptr)
-			{
-				if (QueryFullProcessImageName(hProcess, 0, processname, &dwSize) != 0)
-				{
-
-					sprocessname = GetExecutableName(processname);
-				}
-				CloseHandle(hProcess);
-			}
-		return sprocessname;
-	}
-
-	std::wstring App::GetFolder(std::wstring folder, std::wstring file)
-	{
-		LPWSTR				wszPath = nullptr;
-		HRESULT				hr = S_OK;
-		fs::path			configfile;
-
-		std::wstring executablename = GetExecutableName();
-
-		if (SUCCEEDED(hr = SHGetKnownFolderPath(FOLDERID_RoamingAppData, KF_FLAG_CREATE, nullptr, &wszPath)))
-		{
-
-			
-			configfile = fs::path(wszPath).append(executablename);
-			configfile = fs::path(configfile).append(folder);
-			configfile = fs::path(configfile).append(file);
-			if (fs::exists(configfile))
-				return (configfile.native());
-			else
-			{
-				auto folderexecutable = fs::path(wszPath).append(executablename);
-
-				if (!fs::exists(folderexecutable))
-				{
-					fs::create_directory(folderexecutable);
-
-				}
-				folderexecutable = fs::path(folderexecutable).append(folder);
-				if (!fs::exists(folderexecutable))
-				{
-					fs::create_directory(folderexecutable);
-				}
-				auto finalfile = fs::path(folderexecutable).append(file);
-				return finalfile.native();
-			}
-		}
-		ATLTRACE(L"the file %s do not exist", configfile.generic_wstring().c_str());
-		return std::wstring();
-
-	}
-
 	HRESULT App::Initialize()
 	{
 		HRESULT hr;
 		
 		SystemEvents::UserPreferenceChanged += gcnew Microsoft::Win32::UserPreferenceChangedEventHandler(this, &ChromeClient::App::OnUserPreferenceChanged);
 
-		if (FAILED(hr = LoadResourcestofile()))
+		if (FAILED(hr = osutility::LoadResourcestofile()))
 		{
 			return hr;
 		}
@@ -257,13 +132,11 @@ namespace ChromeClient
 	{
 		FileStream^ fs = nullptr;
 		String^ xamlFile = nullptr;
-		std::wstring themefile = L"WindowsTheme.xaml";
-		std::wstring themefolder = L"Themes";
 
 
 		try
 		{
-			std::wstring destfile = GetFolder(themefolder, themefile);
+			std::wstring destfile = osutility::GetFolder(osutility::themefolder(), osutility::themefile());
 			
 			String^ stylefile = msclr::interop::marshal_as<String^>(destfile.c_str());
 
@@ -302,13 +175,11 @@ namespace ChromeClient
 	{
 		FileStream		^fs			= nullptr;
 		String			^xamlFile	= nullptr;
-		std::wstring xamlfolder = L"XAML";
-		std::wstring MainWindowfile = L"MainWindow.xaml";
 
 		try
 		{
 
-			std::wstring destfile = GetFolder(xamlfolder, MainWindowfile);
+			std::wstring destfile = osutility::GetFolder(osutility::xamlfolder(), osutility::xamlmainwindowfile());
 
 			xamlFile = msclr::interop::marshal_as<String^>(destfile.c_str());
 

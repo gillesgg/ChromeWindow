@@ -13,6 +13,15 @@
       <UniqueIdentifier>{a09f5d24-98f2-4fd9-b175-30b72a325643}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;jpg;jpeg;jpe;manifest</Extensions>
     </Filter>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{0afddd22-666b-4454-a940-81dd23b4b116}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility\os">
+      <UniqueIdentifier>{be6f99ed-6338-4b81-854d-579656824ed8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility\theme">
+      <UniqueIdentifier>{9173aebc-4cb7-4758-803b-5ec38978a7f9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -27,8 +36,11 @@
     <ClCompile Include="FormViewHwndHost.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="osutility.cpp">
+      <Filter>Utility\os</Filter>
+    </ClCompile>
     <ClCompile Include="theme.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Utility\theme</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -44,8 +56,11 @@
     <ClInclude Include="FormViewHwndHost.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="osutility.h">
+      <Filter>Utility\os</Filter>
+    </ClInclude>
     <ClInclude Include="theme.h">
-      <Filter>Header Files</Filter>
+      <Filter>Utility\theme</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -63,12 +78,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="res\xaml1.bin">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\theme1.bin">
-      <Filter>Resource Files</Filter>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Page Include="res\XAML\MainWindow.xaml" />

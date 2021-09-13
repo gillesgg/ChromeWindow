@@ -6,8 +6,10 @@
         Style="{DynamicResource MainWindowStyle}"
         Title="MainWindow" Height="450" Width="800">
 
+    
 
-  <!--Positionner la caption & marge dynamiquement-->
-  <Grid x:Name="MainGrid" Margin="10,30,10,10"/>
-  
-  </Window>
+    <!--Positionner la caption & marge dynamiquement-->
+    <Grid x:Name="MainGrid" Margin="10,30,10,10">
+        <!--<Button Content="blabla" Width="100" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,-30,0,0"/>-->
+    </Grid>
+</Window>

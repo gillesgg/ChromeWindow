@@ -27,11 +27,7 @@ namespace ChromeClient
 		HRESULT ApplyTheme();
 		HRESULT LoadHTMLView();
 		void	ApplyWindowsTheme();
-		HRESULT	LoadResourcestofile();
-		HRESULT LoadResourcetofile(std::wstring folder, std::wstring filename, int id, std::wstring name);
-		std::wstring GetFolder(std::wstring folder, std::wstring file);
-		std::wstring GetExecutableName(std::wstring path);
-		std::wstring App::GetExecutableName();
+
 
 	private:
 		

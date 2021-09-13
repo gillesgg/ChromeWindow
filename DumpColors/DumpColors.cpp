@@ -64,7 +64,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	static HWND hWndButton = NULL;
 	static HWND hWndLV = NULL;
-	int wmId, wmEvent;
 	switch (message)
 	{
 	case WM_CREATE:
@@ -101,7 +100,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		case NM_CUSTOMDRAW:
 		{
 			NMLVCUSTOMDRAW* pnmlv = (NMLVCUSTOMDRAW*)pnmhdr;
-			int nItem = pnmlv->nmcd.dwItemSpec;
+			int nItem = (int) pnmlv->nmcd.dwItemSpec;
 			int nSubItem = pnmlv->iSubItem;
 			BOOL bHighlighted = 0;
 
@@ -122,7 +121,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 				{
 					WCHAR wsText[255] = L"";
 					ListView_GetItemText(pnmhdr->hwndFrom, nItem, 1, wsText, ARRAYSIZE(wsText));
-					DWORD nColor = _wtof(wsText);
+					DWORD nColor = (DWORD) _wtof(wsText);
 					COLORREF color = RGB(0xFF & nColor, (0xFF00 & nColor) >> 8, (0xFF0000 & nColor) >> 16);
 					pnmlv->clrTextBk = color;
 					if (color == 0)

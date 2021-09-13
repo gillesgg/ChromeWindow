@@ -207,6 +207,7 @@
     <ClCompile Include="App.cpp" />
     <ClCompile Include="ChromeClient.cpp" />
     <ClCompile Include="FormViewHwndHost.cpp" />
+    <ClCompile Include="osutility.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -218,6 +219,7 @@
   <ItemGroup>
     <ClInclude Include="App.h" />
     <ClInclude Include="FormViewHwndHost.h" />
+    <ClInclude Include="osutility.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="theme.h" />
@@ -231,8 +233,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="res\theme1.bin" />
-    <None Include="res\xaml1.bin" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
