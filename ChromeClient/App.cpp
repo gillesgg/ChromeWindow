@@ -108,8 +108,6 @@ namespace ChromeClient
 		if (maingrid != nullptr)
 		{
 			Controls::Grid^ windowgrid = gcnew Controls::Grid();
-			System::Windows::Media::SolidColorBrush^ br = gcnew  System::Windows::Media::SolidColorBrush(Colors::Yellow);
-			windowgrid->Background = br;
 			windowgrid->Children->Add(host);
 			maingrid->Children->Add(windowgrid);
 			return S_OK;

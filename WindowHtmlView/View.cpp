@@ -16,20 +16,6 @@
 LRESULT CView::OnPaint(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lParam*/, BOOL& /*bHandled*/)
 {
 	CPaintDC dc(m_hWnd);
-
-	//RECT rc;
-
-	//GetClientRect(&rc);
-
-
-
-	//HBRUSH br = CreateSolidBrush(RGB(255, 0, 0));
-
-
-	//dc.FillRect(&rc, br);
-
-
-
 	return 0;
 }
 

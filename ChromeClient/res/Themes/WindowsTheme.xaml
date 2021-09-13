@@ -8,6 +8,7 @@
     <SolidColorBrush x:Key="ControlBrightDefaultBorderBrush"     Color="#FFAFAFAF"/>
     <SolidColorBrush x:Key="ControlDisabledGlythColour"          Color="#FF666666"/>
     <SolidColorBrush x:Key="ControlMouseOverBorderBrush"         Color="#FFBEBEBE"/>
+    
     <system:Double x:Key="CaptionHeight">30</system:Double>
 
 
@@ -105,8 +106,6 @@
                                 IsTabStop="False"
                                 Visibility="Collapsed"
                                 WindowChrome.ResizeGripDirection="BottomRight" />
-
-                           
                             <Grid>
                                 <Grid>
                                     <Grid.RowDefinitions>

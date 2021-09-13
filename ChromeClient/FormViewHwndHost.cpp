@@ -13,13 +13,14 @@ namespace ChromeClient
 	System::Runtime::InteropServices::HandleRef FormViewHwndHost::BuildWindowCore(System::Runtime::InteropServices::HandleRef hwndParent)
 	{
 		HWND			hwndview	= nullptr;
-		std::wstring	url			= L"https://www.microsoft.com";
+		std::wstring	url			= L"https://www.bing.fr";
 		
 		pView_ = new CWindowHtmlView();
 		if (pView_)
 		{
 			pView_->CreateView(&url, (HWND)hwndParent.Handle.ToInt64(), &hwndview);
 		}
+
 		return System::Runtime::InteropServices::HandleRef(this, IntPtr(hwndview));		
 	}
 

@@ -23,7 +23,3 @@ public:
 private:
 	CView* pView;
 };
-
-extern WINDOWHTMLVIEW_API int nWindowHtmlView;
-
-WINDOWHTMLVIEW_API int fnWindowHtmlView(void);
