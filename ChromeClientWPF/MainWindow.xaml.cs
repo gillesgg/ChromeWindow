@@ -24,7 +24,7 @@ namespace ChromeClientWPF
         {
             InitializeComponent();
 
-
+            
         }
         // Can execute
         private void CommandBinding_CanExecute(object sender, CanExecuteRoutedEventArgs e)
@@ -63,6 +63,30 @@ namespace ChromeClientWPF
             SystemCommands.CloseWindow(this);
         }
 
-        
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            var dic = Application.Current.Resources.MergedDictionaries[0];
+
+            dic.Remove("ControlGlythColour");
+
+            SolidColorBrush dd = new SolidColorBrush(Colors.Yellow);
+
+
+            dic.Add("ControlGlythColour", dd);
+
+            //System::Windows::ResourceDictionary ^ dic = Resources->MergedDictionaries[0];
+            //System::Windows::Style ^ st = (System::Windows::Style ^)dic["MainWindowStyle"];
+            //System::Windows::Media::SolidColorBrush^ bb = gcnew System::Windows::Media::SolidColorBrush(Colors::Yellow);
+            //(System::Windows::Media::SolidColorBrush^)dic["ControlGlythColour"] = bb;
+            //dic->Remove("ControlGlythColour");
+            //dic->Add("ControlGlythColour", bb);
+            //this->MainWindow->Style = st;
+
+
+            //System::Windows::ResourceDictionary ^ dic1 = this->MainWindow->Resources;
+
+
+        }
     }
 }

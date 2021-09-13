@@ -48,6 +48,7 @@ extern CAppModule _Module;
 #include <winrt/Windows.Foundation.h>
 #include <wrl.h>
 
+#include <wil/result.h>
 
 // WebView
 #include <WebView2.h>

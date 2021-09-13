@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChromeClientWPF"
         mc:Ignorable="d"
+        Style="{StaticResource MainWindowStyle}"
         Title="MainWindow" Height="450" Width="800">
 
     <Window.Resources>
@@ -18,11 +19,8 @@
     </Window.CommandBindings>
 
     <Grid x:Name="MainGrid" Margin="0,30,0,0">
-        
-        <!--<StackPanel Orientation="Vertical">
-            <Button Content="bla" Width="150" Height="150"/>
-            <Button Content="bla" Width="150" Height="150"/>
-        </StackPanel>-->
+
+        <Button Content="bla" Width="150" Height="150" Click="Button_Click"/>
 
 
     </Grid>

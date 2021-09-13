@@ -3,7 +3,7 @@
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
 
     <SolidColorBrush x:Key="WindowBorderColour"                  Color="#FFE0E0E0" />
-    <SolidColorBrush x:Key="ControlGlythColour"                  Color="Red"/>
+    <SolidColorBrush x:Key="ControlGlythColour"                  Color="#FF0A0A0A"/>
     <SolidColorBrush x:Key="ControlBrightDefaultBackground"      Color="#FFCDCDCD"/>
     <SolidColorBrush x:Key="ControlBrightDefaultBorderBrush"     Color="#FFAFAFAF"/>
     <SolidColorBrush x:Key="ControlDisabledGlythColour"          Color="#FF666666"/>
@@ -133,7 +133,7 @@
                                             VerticalContentAlignment="Center" 
                                             WindowChrome.IsHitTestVisibleInChrome="True"
                                             Command="SystemCommands.MinimizeWindowCommand">
-                                            <Rectangle Width="10"  VerticalAlignment="Center"  Margin="1 2 0 0"  Stroke="{DynamicResource ControlGlythColour}"  StrokeThickness="10"/>
+                                            <Rectangle Width="10"  VerticalAlignment="Center"  Margin="1 2 0 0"  Stroke="{DynamicResource ControlGlythColour}"  StrokeThickness="1"/>
                                         </Button>
                                         <Button x:Name="btnRestore"
                                             Background="Transparent" 
@@ -190,5 +190,5 @@
             </Setter.Value>
         </Setter>
     </Style>
-
 </ResourceDictionary>
+

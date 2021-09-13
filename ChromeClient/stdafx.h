@@ -13,8 +13,8 @@
 
 // C runtime header files
 #include <string>
-
-
+#include <map>
+#include <filesystem>
 
 
 // Atl header files
@@ -34,6 +34,7 @@ extern CAppModule _Module;
 
 
 
+namespace		fs = std::filesystem;
 
 #if defined _M_IX86
   #pragma comment(linker, "/manifestdependency:\"type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='x86' publicKeyToken='6595b64144ccf1df' language='*'\"")

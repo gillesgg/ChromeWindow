@@ -27,6 +27,9 @@
     <ClCompile Include="FormViewHwndHost.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="theme.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -39,6 +42,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FormViewHwndHost.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="theme.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -57,5 +63,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="res\xaml1.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\theme1.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="res\XAML\MainWindow.xaml" />
+    <Page Include="res\Themes\WindowsTheme.xaml" />
   </ItemGroup>
 </Project>

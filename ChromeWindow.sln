@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31612.314
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChromeClientWPF", "ChromeClientWPF\ChromeClientWPF.csproj", "{ECD6A950-50AF-457C-97CB-B9C68B394729}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ChromeClient", "ChromeClient\ChromeClient.vcxproj", "{C16CE60C-7A10-4FC6-BE64-87BE6CDD62DE}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WindowHtmlView", "WindowHtmlView\WindowHtmlView.vcxproj", "{637EC44F-2D50-450B-AE1C-89747D26985F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DumpColors", "DumpColors\DumpColors.vcxproj", "{8032C795-5A3E-4F09-8310-53478E94DFD3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,7 +39,8 @@ Global
 		{C16CE60C-7A10-4FC6-BE64-87BE6CDD62DE}.Debug|x64.Build.0 = Debug|x64
 		{C16CE60C-7A10-4FC6-BE64-87BE6CDD62DE}.Debug|x86.ActiveCfg = Debug|x64
 		{C16CE60C-7A10-4FC6-BE64-87BE6CDD62DE}.Debug|x86.Build.0 = Debug|x64
-		{C16CE60C-7A10-4FC6-BE64-87BE6CDD62DE}.Release|Any CPU.ActiveCfg = Release|Win32
+		{C16CE60C-7A10-4FC6-BE64-87BE6CDD62DE}.Release|Any CPU.ActiveCfg = Release|x64
+		{C16CE60C-7A10-4FC6-BE64-87BE6CDD62DE}.Release|Any CPU.Build.0 = Release|x64
 		{C16CE60C-7A10-4FC6-BE64-87BE6CDD62DE}.Release|x64.ActiveCfg = Release|x64
 		{C16CE60C-7A10-4FC6-BE64-87BE6CDD62DE}.Release|x64.Build.0 = Release|x64
 		{C16CE60C-7A10-4FC6-BE64-87BE6CDD62DE}.Release|x86.ActiveCfg = Release|Win32
@@ -48,11 +51,24 @@ Global
 		{637EC44F-2D50-450B-AE1C-89747D26985F}.Debug|x64.Build.0 = Debug|x64
 		{637EC44F-2D50-450B-AE1C-89747D26985F}.Debug|x86.ActiveCfg = Debug|x64
 		{637EC44F-2D50-450B-AE1C-89747D26985F}.Debug|x86.Build.0 = Debug|x64
-		{637EC44F-2D50-450B-AE1C-89747D26985F}.Release|Any CPU.ActiveCfg = Release|Win32
+		{637EC44F-2D50-450B-AE1C-89747D26985F}.Release|Any CPU.ActiveCfg = Release|x64
+		{637EC44F-2D50-450B-AE1C-89747D26985F}.Release|Any CPU.Build.0 = Release|x64
 		{637EC44F-2D50-450B-AE1C-89747D26985F}.Release|x64.ActiveCfg = Release|x64
 		{637EC44F-2D50-450B-AE1C-89747D26985F}.Release|x64.Build.0 = Release|x64
 		{637EC44F-2D50-450B-AE1C-89747D26985F}.Release|x86.ActiveCfg = Release|Win32
 		{637EC44F-2D50-450B-AE1C-89747D26985F}.Release|x86.Build.0 = Release|Win32
+		{8032C795-5A3E-4F09-8310-53478E94DFD3}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{8032C795-5A3E-4F09-8310-53478E94DFD3}.Debug|Any CPU.Build.0 = Debug|x64
+		{8032C795-5A3E-4F09-8310-53478E94DFD3}.Debug|x64.ActiveCfg = Debug|x64
+		{8032C795-5A3E-4F09-8310-53478E94DFD3}.Debug|x64.Build.0 = Debug|x64
+		{8032C795-5A3E-4F09-8310-53478E94DFD3}.Debug|x86.ActiveCfg = Debug|Win32
+		{8032C795-5A3E-4F09-8310-53478E94DFD3}.Debug|x86.Build.0 = Debug|Win32
+		{8032C795-5A3E-4F09-8310-53478E94DFD3}.Release|Any CPU.ActiveCfg = Release|x64
+		{8032C795-5A3E-4F09-8310-53478E94DFD3}.Release|Any CPU.Build.0 = Release|x64
+		{8032C795-5A3E-4F09-8310-53478E94DFD3}.Release|x64.ActiveCfg = Release|x64
+		{8032C795-5A3E-4F09-8310-53478E94DFD3}.Release|x64.Build.0 = Release|x64
+		{8032C795-5A3E-4F09-8310-53478E94DFD3}.Release|x86.ActiveCfg = Release|Win32
+		{8032C795-5A3E-4F09-8310-53478E94DFD3}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
